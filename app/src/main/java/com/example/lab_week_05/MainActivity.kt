@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         Log.d(MAIN_ACTIVITY, "Missing image URL")
                     }
-                    apiResponseView.text = getString(R.string.image_placeholder,
-                        firstImage)
+                    val breedName = image?.firstOrNull()?.breeds?.firstOrNull()?.name ?: "Unknown"
+                    apiResponseView.text = "Breed: $breedName"
                 }
                 else{
                     Log.e(MAIN_ACTIVITY, "Failed to get response\n" +
